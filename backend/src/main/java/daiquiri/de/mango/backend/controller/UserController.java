@@ -101,7 +101,6 @@ public class UserController {
         }
 
         return ResponseEntity.ok(u);
-
     }
 
 }

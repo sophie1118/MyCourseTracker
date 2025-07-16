@@ -1,9 +1,8 @@
 package daiquiri.de.mango.backend.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table (name = "user_tb")
@@ -20,6 +19,10 @@ public class User {
 
     @Column (nullable = false)
     private String password;
+
+    @OneToMany(mappedBy = "user")
+    private List<UserCourse> userCourses;
+
 
     public User() {
     }
